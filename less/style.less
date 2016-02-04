@@ -1,0 +1,340 @@
+@import (less) "../css/normalize.css";
+@import (less) "../css/layout.css";
+
+@small-breakpoint: 480px;
+@medium-breakpoint: 768px;
+@large-breakpoint: 960px;
+
+@small: ~"(min-width: 480px)";
+@medium: ~"(min-width: 768px)";
+@large: ~"(min-width: 960px)";
+
+@secondary-font: "Roboto", Arial, sans-serif;
+@third-font: "OpenSans", Arial, sans-serif;
+
+@primary-color: #666666;
+@secondary-color: #ffcc00;
+
+body{
+	font: 500 14px/1.7 "Raleway", Arial, sans-serif;
+	color: #333333;
+	text-align: center;
+}
+
+/* Typography */
+h1,h2,h3,h4,h5,h6 {
+	margin: 0;
+}
+h1 {
+	font: 900 60px/1 @secondary-font;
+	color:  #ffcc00;
+	text-transform: uppercase;
+	padding-bottom: 30px;
+	@media (max-width: 479px){
+	font-size: 50px;
+	}
+}
+h2 {
+	font: 900 36px/1 @secondary-font;
+	color: @primary-color;
+	padding-bottom: 52px;
+	@media (min-width: 768px) and (max-width: 959px) {
+	font-size: 30px;
+	}
+	@media (max-width: 479px){
+	font-size: 24px;
+	padding-bottom: 40px;
+	}
+}
+h3 {
+	font-size: 24px;
+	font-weight: 400;
+	color:  @primary-color;
+	padding-bottom: 21px;
+	@media (max-width: 479px) {
+		font-size: 20px;
+	}
+}
+h4 {
+	color:  #898f8f;
+	font-size: 18px;
+	font-weight: 500;
+	text-transform: uppercase;
+	padding-bottom: 3px;
+	@media (max-width: 479px) {
+		padding-bottom: 10px;
+	}
+}
+a,
+input[type="submit"],
+input[type="button"],
+button{
+	-webkit-transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+	-moz-transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+	transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+}
+input[type="submit"],
+input[type="button"],
+button,
+.ba-button{
+	display: inline-block;
+	&:hover {
+
+	}
+	&:active {
+
+	}
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+textarea,
+select {
+
+	-webkit-transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+	-moz-transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+	transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+
+}
+textarea {
+
+}
+
+/* Layout */
+.ba-grid > [class*="ba-width-"] {
+    float: left;
+    padding-left: 0;
+}
+
+.ba-grid {
+    margin-left: 0;
+}
+.ba-container{
+	padding-left: 20px;
+	padding-right: 20px;
+	max-width: 1180px;
+}
+header {
+	padding: 50px 0 0;
+	@media @medium {
+		padding: 111px 0 0;
+	}
+}
+.icon {
+	display: block;
+	background: #fff url(../img/bonfire.png) 50% no-repeat;
+	width: 30px;
+	height: 30px;
+	padding: 0 7px;
+	margin: 0 auto 40px;
+	position: relative;
+	z-index: 20;
+	&:before {
+		content: "";
+		position: absolute;
+		background-color: @secondary-color;
+		width: 250px;
+		height: 1px;
+		top: 50%;
+		left: -110px;
+		z-index: 1;
+		@media @medium {
+			width: 450px;
+			left: -210px;
+		}
+	}
+}
+main {
+	padding-bottom: 50px;
+	@media @medium {
+		padding-bottom: 93px;
+	}
+}
+.ba-width--border {
+	border: none;
+	@media @medium {
+		border-left: 1px solid @secondary-color;
+	}
+}
+.ba-photo {
+	border: 1px solid @secondary-color;
+	max-width: 420px;
+	max-height: 420px;
+	padding: 15px;
+	margin: 0 auto;
+	@media @medium {
+		margin: 75px 82px 0 0;
+	}
+	img {
+		border: 1px solid @secondary-color;
+	}
+}
+.ba-slide__description {
+		padding: 50px 0 0;
+		margin: 0 auto;
+	@media @medium {
+		padding: 90px 0 65px 84px;
+	}
+	h2 {
+		position: relative;
+			&:before {
+			content: "";
+			position: absolute;
+			background-color: @secondary-color;
+			width: 100px;
+			height: 1px;
+			top: 65px;
+			left: 50%;
+			margin-left: -50px;
+			@media (max-width: 479px) {
+				top: 50px;
+			}
+			@media (max-width: 345px) {
+				top: 70px;
+			}
+		}
+	}
+	p {
+		margin: 0;
+		padding-bottom: 50px;
+		position: relative;
+		&:after {
+			content: "";
+			position: absolute;
+			border: 2px dashed @secondary-color;
+			width: 50px;
+			bottom: 25px;
+			left: 50%;
+			margin-left: -25px;
+
+		}
+	}
+	.ba-button__profile {
+		display: inline-block;
+		text-decoration: none;
+		text-transform: uppercase;
+		font: 700 14px/24px @third-font;
+		color:  @primary-color;
+		height: 24px;
+		padding: 0 13px 12px;
+		border: 1px solid @secondary-color;
+		position: relative;
+		&:hover {
+			color: @secondary-color;
+		}
+		&:active {
+			top: 2px;
+		}
+	}
+}
+.ba-socials__link {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border: 2px solid #cccccc;
+	margin: 0 4px 26px 0;
+	@media (max-width: 337px) {
+		&:not(:nth-child(4n+2)) {
+			margin-bottom: 10px;
+			}
+		}
+	&:hover {
+		border-color: @primary-color;
+	}
+	.social {
+		color:  #cccccc;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 26px;
+		transition: color .3s ease-in;
+	}
+	&:hover .social {
+		color: @primary-color;
+	}
+}
+
+@import "slick.less";
+
+.ba-slider {
+	position: relative;
+	padding: 0 67px 52px;
+
+	.ba-slide {
+		border: none;
+		outline: none;
+	}
+	.slick-arrow {
+		position: absolute;
+		padding: 0;
+		top: 50%;
+		z-index: 2;
+		width: 23px;
+		height: 23px;
+		background: no-repeat 50%;
+		text-indent: -999999px;
+		border: none;
+		text-indent: -99999px;
+		outline: none;
+		transition: opacity .2s ease-in;
+		&:focus, &:active {
+		opacity: 0.5;
+		}
+	}
+	.slick-prev {
+		background-image: url(../img/left.png);
+		left: 0;
+
+	}
+	.slick-next {
+		background-image: url(../img/right.png);
+		right: 0;
+	}
+	.slick-dots {
+		position: absolute;
+		z-index: 2;
+		list-style-type: none;
+		bottom: -22px;
+		left: 50%;
+		padding-left: 0;
+		margin: 0;
+		transform: translateX(-50%);
+		li {
+			float: left;
+		}
+		button {
+			width: 10px;
+			height: 10px;
+			text-indent: -9999px;
+			background: @secondary-color;
+			margin-right: 9px;
+			padding: 0;
+			border-radius: 50%;
+			border: 1px solid @secondary-color;
+			display: inline-block;
+			// transition: height .3s ease-in;
+			&:focus, &:active {
+				background: #FFF;
+				outline: none;
+			}
+		}
+		.slick-active {
+			button {
+				background: #fff;
+
+			}
+		}
+	}
+}
